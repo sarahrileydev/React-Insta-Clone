@@ -24,8 +24,9 @@ class CommentForm extends React.Component {
     };
     copiedComment.push(newComment);
     //changing the data and so you have to setState
-    this.setState({
-        comments: copiedComment, comment: ""
+    this.setState({ 
+      comments: copiedComment, 
+      input: "" 
     });
   };
 
