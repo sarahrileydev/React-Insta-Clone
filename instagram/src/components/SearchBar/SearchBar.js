@@ -1,15 +1,26 @@
-import React from 'react'; 
+import React from "react";
 
-const SearchBar = () => {
-  return(
+const SearchBar = props => {
+  return (
     <div className="search-bar">
-    <div className="header">
+      <div className="header">
         <i className="fab fa-instagram" />
         <h1>Instagram</h1>
       </div>
 
-      <form className="search-bar">
-        <input className="searchBox" placeholder="Search" />
+      <form>
+        <input
+          className="input"
+          type="text"
+          name="username"
+          value={props.users.username}
+          placeholder="Search"
+          onChange={props.search}
+        />
+
+        <button class="btn" onClick={props.updateSearch}>
+          Search...
+        </button>
       </form>
       <div className="nav-icons">
         <i className="far fa-compass" />
@@ -18,6 +29,6 @@ const SearchBar = () => {
       </div>
     </div>
   );
-}
+};
 
 export default SearchBar;

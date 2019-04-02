@@ -1,5 +1,6 @@
 import React from "react";
 import CommentSection from "../CommentSection/CommentSection";
+import Likes from "./Likes";
 
 const Post = props => {
   return(
@@ -16,6 +17,7 @@ const Post = props => {
   src={props.post.imageUrl}
   alt={props.post.imageUrl}
   />
+   <Likes likes={props.post.likes}/>
    <CommentSection comments={props.post.comments} />
 
 </div>
