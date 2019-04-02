@@ -14,11 +14,26 @@ class CommentForm extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  submitComment = event => {
+  addComment = (event) => {
     event.preventDefault();
-    this.setState({ input: "" });
-    this.props.addComment(event, this.state.input);
+    const copiedComment = this.state.comments.slice();
+    const newComment = {
+      username: "newcomment",
+      id: Date.now(),
+      text: this.state.input
+    };
+    copiedComment.push(newComment);
+    //changing the data and so you have to setState
+    this.setState({
+        comments: copiedComment, comment: ""
+    });
   };
+
+  // submitComment = event => {
+  //   event.preventDefault();
+  //   this.setState({ input: "" });
+  //   this.props.addComment(event, this.state.input);
+  // };
 
   render() {
     return (
@@ -33,13 +48,13 @@ class CommentForm extends React.Component {
         ))}
       </div>
         <div className="comment-form">
-          <form onSubmit={this.submitComment}>
+          <form onSubmit={this.addComment}>
             <input
               type="text"
               name="input"
               value={this.state.input}
               onChange={this.handleChanges}
-              placeholder="Search..."
+              placeholder="Add comment..."
             />
           </form>
         </div>

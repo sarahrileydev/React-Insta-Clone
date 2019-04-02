@@ -1,36 +1,29 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
 import PostContainer from "./components/PostContainer/PostContainer";
-import dummydata from './dummydata';
+import dummydata from "./dummydata";
 
 class App extends Component {
-
   constructor() {
     super();
     this.state = {
-      data: dummydata
-    }
-
+      data: []
+    };
   }
 
-addComment = (event, item) => {
-  event.preventDefault();
-  const newComment = {
-    id: Date.now()
+  componentDidMount = () => {
+    this.setState({
+      data: dummydata
+    });
   };
-  //changing the data and so you have to setState
-  this.setState({
-    data: [newComment, ...this.state.data]
-  })
-}
 
   render() {
     console.log(this.state);
     return (
       <div className="App">
-       <h1>This is the App!</h1>
-       <PostContainer data={this.state.data} addComment={this.addComment}/>
+        <h1>This is the App!</h1>
+        <PostContainer data={this.state.data} />
       </div>
     );
   }

@@ -16,7 +16,7 @@ const Post = props => {
   src={props.post.imageUrl}
   alt={props.post.imageUrl}
   />
-   <CommentSection comments={props.post.comments}/>
+   <CommentSection comments={props.post.comments} />
 
 </div>
   );
