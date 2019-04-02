@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import PostContainer from "./components/PostContainer";
-
-
+import PostContainer from "./components/PostContainer/PostContainer";
 import dummydata from './dummydata';
 
 class App extends Component {
