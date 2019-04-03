@@ -14,11 +14,11 @@ class Login extends React.Component {
 
   login = (e) => {
     e.preventDefault();
-    const username = {
+    const userName = {
       username: this.state.username
     };
     this.setState({
-      username,
+      userName,
       username: ""
     })
     localStorage.setItem("username", this.state.username);
