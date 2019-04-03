@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
 
-
 import dummydata from "./dummydata";
-import PostsPages from "./components/PostContainer/PostsPage";
+import PostsPage from "./components/PostContainer/PostsPage";
+import withAuthenticate from "./authentication/withAuthenticate";
+
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage);
 
 class App extends Component {
   constructor() {
@@ -26,7 +28,7 @@ class App extends Component {
     console.log(this.state);
     return (
       <div className="app">
-       <PostsPages />
+       <ComponentFromWithAuthenticate />;
       </div>
     );
   }
