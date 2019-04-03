@@ -10,12 +10,12 @@ class CommentForm extends React.Component {
     };
   }
 
-  handleChanges = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleChanges = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  addComment = (event) => {
-    event.preventDefault();
+  addComment = (e) => {
+    e.preventDefault();
     const copiedComment = this.state.comments.slice();
     const newComment = {
       username: "newcomment",
