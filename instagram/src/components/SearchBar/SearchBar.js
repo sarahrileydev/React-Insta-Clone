@@ -18,7 +18,7 @@ const SearchBar = props => {
           onChange={props.search}
         />
 
-        <button class="btn" onClick={props.updateSearch}>
+        <button className="btn" onClick={props.updateSearch}>
           Search...
         </button>
       </form>

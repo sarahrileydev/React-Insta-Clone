@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import SearchBar from "./components/SearchBar/SearchBar";
-import PostContainer from "./components/PostContainer/PostContainer";
+
 import dummydata from "./dummydata";
+import PostsPages from "./components/PostContainer/PostsPage";
 
 class App extends Component {
   constructor() {
@@ -14,26 +14,7 @@ class App extends Component {
     };
   }
 
-  handleSearch = event => {
-    this.setState({
-      search: event.target.value
-    });
-  };
-
-  updateSearch = event => {
-    event.preventDefault();
-    if (this.state.search === "") {
-      this.setState({
-        data: dummydata
-      });
-    } else {
-      this.setState({
-        data: dummydata.filter(
-          user => user.username.includes(this.state.search) === true
-        )
-      });
-    }
-  };
+ 
 
   componentDidMount = () => {
     this.setState({
@@ -44,13 +25,8 @@ class App extends Component {
   render() {
     console.log(this.state);
     return (
-      <div className="App">
-        <SearchBar
-          search={this.handleSearch}
-          users={this.state.data}
-          updateSearch={this.updateSearch}
-        />
-        <PostContainer data={this.state.data} />
+      <div className="app">
+       <PostsPages />
       </div>
     );
   }
