@@ -12,8 +12,7 @@ class Login extends React.Component {
     this.setState({ [e.target.name]: e.target.value});
   };
 
-  login = (e) => {
-    e.preventDefault();
+  login = () => {
     const userName = {
       username: this.state.username
     };
@@ -22,7 +21,6 @@ class Login extends React.Component {
       username: ""
     })
     localStorage.setItem("username", this.state.username);
-    window.location.reload();
   }
 
   render() {
