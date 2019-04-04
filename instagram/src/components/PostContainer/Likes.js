@@ -1,5 +1,19 @@
 import React, { Component } from "react";
 
+import styled from "styled-components";
+
+const LikeStyle = styled.div`
+  padding: 10px 0 0 10px;
+
+  i {
+    font-size: 18px;
+    padding: 0 5px;
+  }
+
+  .fas {
+    color: crimson;
+  }
+`;
 
 class Likes extends Component {
   constructor(props) {
@@ -29,16 +43,16 @@ class Likes extends Component {
 
   render() {
     return (
-      <div>
+      <LikeStyle>
         <i
           onClick={this.addLike}
           className={`far fa-heart fa-2x heart ${
-            this.state.clicked ? "fas fa-heart " : null
+            this.state.clicked ? "fas fa-heart" : null
           }`}
         />
         <i className="far fa-comment" />
         <p className="likes">{this.state.likes} likes</p>
-      </div>
+      </LikeStyle>
     );
   }
 }

@@ -1,6 +1,18 @@
 import React from "react";
 import Comment from "./Comment";
 
+import styled from 'styled-components';
+
+const CommentSectionStyle = styled.div`
+    margin: 20px 0;
+    padding: 0 15px;
+
+    input { 
+      width: 100%;
+
+    }
+`;
+
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +26,7 @@ class CommentForm extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  addComment = (e) => {
+  addComment = e => {
     e.preventDefault();
     const copiedComment = this.state.comments.slice();
     const newComment = {
@@ -24,9 +36,9 @@ class CommentForm extends React.Component {
     };
     copiedComment.push(newComment);
     //changing the data and so you have to setState
-    this.setState({ 
-      comments: copiedComment, 
-      input: "" 
+    this.setState({
+      comments: copiedComment,
+      input: ""
     });
   };
 
@@ -38,16 +50,12 @@ class CommentForm extends React.Component {
 
   render() {
     return (
-      <div className="comment-section">
-      <div className="comment">
-        {this.state.comments.map(item => (
-          <Comment 
-          key={item.id} 
-          username={item.username}
-          text={item.text}
-          />
-        ))}
-      </div>
+      <CommentSectionStyle>
+        <div className="comment">
+          {this.state.comments.map(item => (
+            <Comment key={item.id} username={item.username} text={item.text} />
+          ))}
+        </div>
         <div className="comment-form">
           <form onSubmit={this.addComment}>
             <input
@@ -59,7 +67,7 @@ class CommentForm extends React.Component {
             />
           </form>
         </div>
-      </div>
+      </CommentSectionStyle>
     );
   }
 }

@@ -11,7 +11,6 @@ const SearchBarStyle = styled.div`
     .header {
       display: flex;
       width: 30%;
-      align-items: baseline;
 
       h1 {
         font-size: 28px;
@@ -30,10 +29,12 @@ const SearchBarStyle = styled.div`
 
     form {
        width: 30%;
+       margin: auto;
     }
 
     .nav-icons {
       width: 30%;
+      text-align: center;
       
       i {
         font-size: 28px;
