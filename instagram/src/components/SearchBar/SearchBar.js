@@ -1,11 +1,55 @@
 import React from "react";
 
+import styled from 'styled-components';
+
+const SearchBarStyle = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    padding: 20px 0px;
+
+    .header {
+      display: flex;
+      width: 30%;
+      align-items: baseline;
+
+      h1 {
+        font-size: 28px;
+        padding-left: 20px;
+
+        span {
+          font-weight: 200;
+        }
+      }
+
+      i {
+        font-size: 30px;
+      }
+
+    }
+
+    form {
+       width: 30%;
+    }
+
+    .nav-icons {
+      width: 30%;
+      
+      i {
+        font-size: 28px;
+        
+        padding: 0 8px;
+      }
+    }
+
+`;
+
 const SearchBar = props => {
   return (
-    <div className="search-bar">
+    <SearchBarStyle>
       <div className="header">
         <i className="fab fa-instagram" />
-        <h1>Instagram</h1>
+        <h1><span>|</span> Instagram</h1>
       </div>
 
       <form>
@@ -19,7 +63,6 @@ const SearchBar = props => {
         />
 
         <button className="btn" onClick={props.updateSearch}>
-          Search...
         </button>
       </form>
       <div className="nav-icons">
@@ -27,7 +70,7 @@ const SearchBar = props => {
         <i className="far fa-heart" />
         <i className="far fa-user" />
       </div>
-    </div>
+    </SearchBarStyle>
   );
 };
 

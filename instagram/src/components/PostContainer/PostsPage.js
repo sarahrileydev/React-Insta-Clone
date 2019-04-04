@@ -3,6 +3,16 @@ import PostContainer from "./PostContainer";
 import dummydata from "../../dummydata";
 import SearchBar from "../SearchBar/SearchBar";
 
+import styled from 'styled-components';
+
+
+const WrapperDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+
 class PostsPages extends React.Component {
   constructor() {
     super();
@@ -35,14 +45,14 @@ class PostsPages extends React.Component {
 
   render() {
     return (
-      <div className="app">
+      <WrapperDiv>
         <SearchBar
           search={this.handleSearch}
           users={this.state.data}
           updateSearch={this.updateSearch}
         />
         <PostContainer data={this.state.data} />
-      </div>
+      </WrapperDiv>
     );
   }
 }
