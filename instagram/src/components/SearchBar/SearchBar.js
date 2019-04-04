@@ -12,6 +12,7 @@ const SearchBarStyle = styled.div`
       display: flex;
       width: 30%;
 
+
       h1 {
         font-size: 28px;
         padding-left: 20px;

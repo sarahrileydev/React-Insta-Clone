@@ -35,6 +35,8 @@
 
 - Read [this article](https://dev.to/nimmo/state-driven-development-for-user-interfaces-part-1-an-introduction-27f1) about 'State Driven Views' and come up with a short paragraph as to why you feel that `state-driven` views are important to us as software developers today? What are state-driven applications? Why are they powerful? How does React enables those patterns?
 
+State-driven applications consider 'state' to be the starting point of application development, not just a side effect. Developing an app with state-driven views as a starting point allows developers to break applications apart into isolated components that can be tested and worked with without effecting other components unintentionally. This has many benefits, particularly reducing the cognitive load on the developer by focusing on one state at a time, which also makes it easier to test and document.
+
 #### Stretch Problems (Day IV)
 
 - Add the functionality to select a single Post. If a user clicks on a post, only show that post.
