@@ -22,6 +22,7 @@ class Login extends React.Component {
       username: ""
     })
     localStorage.setItem("username", this.state.username);
+    window.location.reload();
   }
 
   render() {
