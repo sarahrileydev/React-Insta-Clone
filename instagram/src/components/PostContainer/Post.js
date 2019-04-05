@@ -23,9 +23,10 @@ const PostHeader = styled.div`
 `;
 
 const PostWrapper = styled.div`
-    box-shadow: 3px 3px 34px -10px lightgray;
+    box-shadow: 3px 3px 34px -10px gray;
     margin: 15px 0;
     padding: 20px 0;
+    background-color: white;
 
     img {
       width: 100%;
